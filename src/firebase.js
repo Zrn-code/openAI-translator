@@ -9,6 +9,7 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyCDbeNexpSQ2EC9rteeegM__4c8MX5nBFU",
   authDomain: "ai-integrator.firebaseapp.com",
+  authDomain: "ai-integrator.web.app",
   projectId: "ai-integrator",
   storageBucket: "ai-integrator.appspot.com",
   messagingSenderId: "404414655098",
