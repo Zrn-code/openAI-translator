@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import { Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
-import { FaLanguage, FaSortDown } from 'react-icons/fa';
+import { FaGlobe, FaSortDown } from 'react-icons/fa';
 import { useLocalStorage, useOnClickOutside } from 'usehooks-ts';
 
 import { ReactComponent as EnFlag } from '@/svg/flags/en.svg';
@@ -20,7 +20,6 @@ export function SwitchLanguageButton() {
   const ref = useRef(null);
   const [lang, setLang] = useLocalStorage<LanguageCode>('langCode', 'zh');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useOnClickOutside(ref, () => setIsMenuOpen(false));
 
@@ -35,18 +34,6 @@ export function SwitchLanguageButton() {
       elem.blur();
     }
   }, [isMenuOpen]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
   
   return (
     <div title="Change Language" className={clsx('dropdown', 'dropdown-end', isMenuOpen && 'dropdown-open')} ref={ref}>
@@ -58,8 +45,7 @@ export function SwitchLanguageButton() {
         className="gap-1 normal-case"
         onClick={() => setIsMenuOpen((prev) => !prev)}
       >
-        <FaLanguage size={20} />
-        {windowWidth > 765 && <FaSortDown size={12} />}
+        <FaGlobe size={20} />
       </Button>
       <div className="w-56 mt-16 overflow-y-auto shadow-2xl dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px">
         <ul className="gap-1 p-3 menu menu-compact" tabIndex={0}>
