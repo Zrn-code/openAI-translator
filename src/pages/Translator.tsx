@@ -37,7 +37,7 @@ function TranslatorPage() {
   // ↑ Hooks before, keep hooks order
 
   const onExchangeLanguageBtnClick = () =>
-    setLastTranslateData((prev) => ({
+    setLastTranslateData((prev: any) => ({
       ...prev,
       fromLang: lastTranslateData.toLang,
       toLang: lastTranslateData.fromLang,
@@ -72,7 +72,7 @@ function TranslatorPage() {
       prompt = getTranslatePrompt(fromLang as Language, toLang as Language);
     }
 
-    setLastTranslateData((prev) => ({
+    setLastTranslateData((prev: any) => ({
       ...prev,
       fromLang: fromLang as Language,
       toLang: toLang as Language,
@@ -95,7 +95,7 @@ function TranslatorPage() {
             <select
               className="w-5/12 select"
               value={lastTranslateData.fromLang}
-              onChange={(e) => setLastTranslateData((prev) => ({ ...prev, fromLang: e.target.value }))}
+              onChange={(e) => setLastTranslateData((prev: any) => ({ ...prev, fromLang: e.target.value }))}
               name="fromLang"
               title="From Language"
               required
@@ -116,7 +116,7 @@ function TranslatorPage() {
             <select
               className="w-5/12 select"
               value={lastTranslateData.toLang}
-              onChange={(e) => setLastTranslateData((prev) => ({ ...prev, toLang: e.target.value }))}
+              onChange={(e) => setLastTranslateData((prev: any) => ({ ...prev, toLang: e.target.value }))}
               name="toLang"
               title="To language"
               required

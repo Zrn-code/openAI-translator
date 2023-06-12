@@ -12,7 +12,7 @@ function Header() {
     <>
       <Navbar className="sticky top-0 z-50 bg-primary text-primary-content">
         <div className="flex-1">
-          <Link to="/" className="text-xl normal-case btn btn-ghost">{t('topbar.title')}</Link>
+          <Link to="/" className="text-xl normal-case btn btn-ghost">AI Integrator</Link>
         </div>
         <div className="flex-none">
           <ConfigButton />

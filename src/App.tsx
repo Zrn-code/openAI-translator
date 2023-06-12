@@ -12,6 +12,7 @@ import NotFound from '@/pages/NotFound';
 
 import { GlobalProvider } from './components/GlobalStore';
 
+const MainPage = lazy(() => import('@/pages/MainPage'));
 const TranslatorPage = lazy(() => import('@/pages/Translator'));
 const HistoryRecordPage = lazy(() => import('@/pages/HistoryRecord'));
 
@@ -25,7 +26,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<TabLayout />}>
-              <Route index element={<TranslatorPage />} />
+              <Route index element={<MainPage />} />
+              <Route path="translator" element={<TranslatorPage />} />
               <Route path="history" element={<HistoryRecordPage />} />
             </Route>
             <Route path="*" element={<NotFound />} />

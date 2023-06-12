@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useEffect, useRef, useState } from 'react';
 import { Button } from 'react-daisyui';
 import { useTranslation } from 'react-i18next';
-import { FaGlobe, FaSortDown } from 'react-icons/fa';
+import { FaGlobe/*, FaSortDown */} from 'react-icons/fa';
 import { useLocalStorage, useOnClickOutside } from 'usehooks-ts';
 
 import { ReactComponent as EnFlag } from '@/svg/flags/en.svg';
