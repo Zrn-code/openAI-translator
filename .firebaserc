@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "ai-integrator"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
