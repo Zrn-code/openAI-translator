@@ -6,11 +6,11 @@ import { FaLanguage, FaSortDown } from 'react-icons/fa';
 import { useLocalStorage, useOnClickOutside } from 'usehooks-ts';
 
 import { ReactComponent as EnFlag } from '@/svg/flags/en.svg';
-import { ReactComponent as HkFlag } from '@/svg/flags/hk.svg';
+import { ReactComponent as TwFlag } from '@/svg/flags/tw.svg';
 
 const LANGUAGES = [
   { code: 'en', name: 'English', icon: <EnFlag width="20" height="20" title={'English'} /> },
-  { code: 'zh', name: '繁體中文', icon: <HkFlag width="20" height="20" title={'繁體中文'} /> },
+  { code: 'zh', name: '繁體中文', icon: <TwFlag width="20" height="20" title={'繁體中文'} /> },
 ] as const;
 
 type LanguageCode = (typeof LANGUAGES)[number]['code'];
@@ -20,6 +20,7 @@ export function SwitchLanguageButton() {
   const ref = useRef(null);
   const [lang, setLang] = useLocalStorage<LanguageCode>('langCode', 'zh');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useOnClickOutside(ref, () => setIsMenuOpen(false));
 
@@ -35,6 +36,18 @@ export function SwitchLanguageButton() {
     }
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
   return (
     <div title="Change Language" className={clsx('dropdown', 'dropdown-end', isMenuOpen && 'dropdown-open')} ref={ref}>
       <Button
@@ -46,7 +59,7 @@ export function SwitchLanguageButton() {
         onClick={() => setIsMenuOpen((prev) => !prev)}
       >
         <FaLanguage size={20} />
-        <FaSortDown size={12} />
+        {windowWidth > 765 && <FaSortDown size={12} />}
       </Button>
       <div className="w-56 mt-16 overflow-y-auto shadow-2xl dropdown-content bg-base-200 text-base-content rounded-t-box rounded-b-box top-px">
         <ul className="gap-1 p-3 menu menu-compact" tabIndex={0}>

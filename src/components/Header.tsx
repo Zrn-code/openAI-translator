@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ConfigButton } from '@/components/ConfigButton';
 import { SwitchLanguageButton } from '@/components/SwitchLanguageButton';
 import { ToggleThemeButton } from '@/components/ToggleThemeButton';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ function Header() {
     <>
       <Navbar className="sticky top-0 z-50 bg-primary text-primary-content">
         <div className="flex-1">
-          <label className="text-xl normal-case btn btn-ghost">{t('topbar.title')}</label>
+          <Link to="/" className="text-xl normal-case btn btn-ghost">{t('topbar.title')}</Link>
         </div>
         <div className="flex-none">
           <ConfigButton />
