@@ -1,6 +1,4 @@
-import { BsTranslate } from 'react-icons/bs';
-import { FaHistory } from 'react-icons/fa';
-import { FaHome } from 'react-icons/fa';
+import {BsTranslate, FaHistory, FaHome} from './Icons';
 
 const NAV_ITEMS = [
   { key: 'main', label: 'Main', to: '/', icon: <FaHome size={24} />},

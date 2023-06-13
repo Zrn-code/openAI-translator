@@ -32,19 +32,19 @@ module.exports = {
       {
         mcplight: {
           'color-scheme': 'light',
-          primary: '#047AFF',
-          secondary: '#463AA2',
-          accent: '#C148AC',
-          neutral: '#021431',
+          'primary': '#047AFF',
+          'secondary': '#463AA2',
+          'accent': '#C148AC',
+          'neutral': '#021431',
           'base-100': '#ffffff',
           'base-200': '#F2F7FF',
           'base-300': '#E3E9F4',
           'base-content': '#394E6A',
-          info: '#93E7FB',
-          success: '#81CFD1',
-          warning: '#EFD7BB',
-          error: '#E58B8B',
-
+          'info': '#93E7FB',
+          'success': '#81CFD1',
+          'warning': '#EFD7BB',
+          'error': '#E58B8B',
+          
           // '--rounded-box': '1rem', // border radius rounded-box utility class, used in card and other large boxes
           '--rounded-btn': '1rem', // border radius rounded-btn utility class, used in buttons and similar element
           // '--rounded-badge': '1.9rem', // border radius rounded-badge utility class, used in badges and similar
@@ -60,7 +60,6 @@ module.exports = {
       {
         mcpdark: {
           'color-scheme': 'dark',
-
           'primary': '#487ce2',
           'secondary': '#c7f5fc',
           'accent': '#ad2628',
