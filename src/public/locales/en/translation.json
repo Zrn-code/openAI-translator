@@ -5,7 +5,8 @@
   },
   "navbar": {
     "Translator": "Translator",
-    "History records": "History records"
+    "History records": "History records",
+    "Home": "Home"
   },
   "Please enter your API Key in config page first!": "Please enter your API Key in config page first!",
   "Something went wrong, please try again later.": "Something went wrong, please try again later.",

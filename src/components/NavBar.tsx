@@ -20,12 +20,11 @@ function NavBar() {
    
     <div className='btm-nav btm-nav-xs'>
         {NAV_ITEMS.map(({ key, label, to, icon }) => (
-          <div className={selectedKey === key ? 'active':''}>
+          <div key={key} className={selectedKey === key ? 'active':''}>
             <Link to={to} title={t(`navbar.${label}`)} draggable="false" className="flex flex-col items-center">
                {icon}
-              {/* <span className='block text-xs font-semibold'>{t(`navbar.${label}`)}</span> */}
+              {/*<span className='block text-xs font-semibold'>{t(`navbar.${label}`)}</span>*/ }
             </Link>
-          
           </div>
         ))}
     </div>
