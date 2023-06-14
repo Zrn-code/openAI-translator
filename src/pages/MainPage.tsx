@@ -13,9 +13,9 @@ function MainPage() {
   };
 	
   return (
-		<div className="flex max-h-full h-3/5 w-full lg:flex-row toast toast-center toast-middle">
-			<div className="card lg:card-side bg-base-100 shadow-xl basis-2/3 image-full">
-				<figure className='blur-sm'><img src="/images/translator.jpg" alt="Album"/></figure>
+		<div className="flex h-3/5 w-full lg:flex-row toast toast-center toast-middle">
+			<div className="card max-h-full lg:card-side bg-base-100 shadow-xl basis-2/3 image-full">
+				<figure className='blur-sm'><img src={MAIN_ITEMS[selected].image} alt="Album"/></figure>
 				<div className="card-body">
 					<h2 className="card-title text-2xl">{t(`navbar.${MAIN_ITEMS[selected].label}`)}</h2>
 					<p>Describe the Main Function.</p>
@@ -26,7 +26,7 @@ function MainPage() {
 			</div>
 			<div className="divider divider-horizontal" />
 			<div className="flex flex-row basis-1/4 space-x-4">
-				{ MAIN_ITEMS.map(({to,icon,label,index}) => (
+				{ MAIN_ITEMS.map(({icon,label,index}) => (
 					<div 
 						key={index} 
 						onClick={() => handleClick(index)} 
